@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+    <div class="banner">
+        <div *ngIf="!isLoggedin()" class="container">
+            <div class="card">
+                <div class="card-header">Login</div>
+                <div class="err d-flex justify-content-center"><h6>{{errorMessage}}</h6></div>
+                <form class="log" #loginref="ngForm" (ngSubmit)="login()">
+                    <div class="form-group">
+                        <label for="exampleInputpassword">UserId</label>
+                        <input type="text" class="form-control" name="userId" placeholder="userId" [(ngModel)]="user.id"  >
+                    </div>
+    
+                    <div class="form-group mt-3" >
+                        <label for="exampleInputpassword">Password</label><br>
+                        <input type="password"  class="form-control" name="username" placeholder="password" [(ngModel)]="user.password"  >
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary ">Submit</button><span >are you a new user?</span>
+                        <a routerLink="/register" class="register"> Register</a>
+                    </div>
+                    
+                    <br>
+                    <small class="text-danger"> {{msg}}</small>
+                </form>
+               
+            </div>
+        </div>
+    
+    </div>
+    
+
+
+<!-- 
+    <div class="container">
+  <div class="card">
+    <div class="card-header">Login</div>
+    <form>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" />
+      </div>
+      <button type="submit" class="btn btn-primary mt-3 btn-block btn-login">
+        Submit
+      </button>
+    </form>
+    <div class="text-center">
+      <a href="#">Forgot password?</a>
+    </div>
+  </div>
+</div>
+ -->

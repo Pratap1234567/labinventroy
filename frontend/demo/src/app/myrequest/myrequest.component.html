@@ -1,0 +1,30 @@
+<app-user-header></app-user-header>
+<div *ngIf="!isAnyEquipmentRegistered" class="d-flex justify-content-center err">{{errorMessage}}</div>
+<div *ngIf="isAnyEquipmentRegistered"> 
+<table class="table table-stripped mt-3" >
+    <thead>
+      <th>RequestId</th>
+      <th>EquipmentId</th>
+      <th>Equipment name</th>
+      <th>Quantity Requested</th>
+      <th>Status</th>
+      <!-- <th>quantity needed</th> -->
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of equipmentBookingRequestList" [ngClass]="{'table-success': request.status=='Accepted',
+      'table-danger': request.status=='Rejected',
+      'table-secondary':request.status=='Pending'} ">
+        <td>{{request.requestId}}</td> 
+        <!-- <td><img src={{equipment\.imageUrl}} class="imgdisplay"alt="image"></td> -->
+        <td  >{{request.equipmentId}}</td>
+        <td>{{request.equipmentName}}</td>
+        <td>{{request.quantityNeeded}}</td>
+        <td>{{request.status}}</td>
+ 
+      </tr>
+     
+        
+    
+    </tbody>
+  </table>
+</div>

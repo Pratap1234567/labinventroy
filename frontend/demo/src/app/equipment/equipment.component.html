@@ -1,0 +1,42 @@
+<app-user-header></app-user-header>
+<div class="cont">
+  <div class="offert">
+   
+      <input  #myinput type="search" class="form-control searchdesign" placeholder="Search By Category" (keyup.enter)="dosearch(myinput.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-outline-success" (click)="dosearch(myinput.value)">Search</button>
+
+  </div> 
+  <div class="errorbox d-flex justify-content-center" *ngIf="showError">
+    <h6>Equipment not exist please find other </h6>
+  </div>
+    <table class="table table-stripped">
+        <thead>
+          <th>equipment id</th>
+          <th>equipment image</th>
+          <th>equipment name</th>
+          <th>quntity</th>
+          <th>category</th>
+          <th>quantity needed</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipment of equipmentList">
+            <td>{{equipment.id}}</td> 
+            <td><img src={{equipment.imageUrl}} class="imgdisplay"alt="image"></td>
+            <td  >{{equipment.name}}</td>
+            <td>{{equipment.quantity}}</td>
+            <td>{{equipment.category}}</td>
+            <td><form><input type="number"  #myinput name="" id="" placeholder="1" min="1"  style="width: 90px;"></form></td>
+            <button type="submit" (click)="sendRequest(equipment,myinput.value)" class=" btn btn-success">Request</button>
+          </tr>
+       
+            
+   
+        </tbody>
+      </table>
+</div>
+
+<!-- uploading image  -->
+<div>
+  <!-- <input type="file" name="" (change)="onFileSelected($event)"> -->
+  
+</div>

@@ -1,0 +1,64 @@
+<app-user-header></app-user-header>
+<div class="banner">
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{user.name}}</span><span class="text-black-50">{{user.email}}</span><span> </span></div>
+            </div>
+            <div class="col-md-9 border-right">
+             
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <div class="err d-flex justify-content-center"><p>{{errorMessage}}</p></div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">UserId</label><input type="text" class="form-control" placeholder={{user.id}} value="" readonly    [(ngModel)]="user.id"></div>
+                        <div class="col-md-6"><label class="labels">UserName</label><input type="text" class="form-control" value="" placeholder={{user.name}}  readonly    [(ngModel)]="user.name" ></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder={{user.email}}  readonly   value="" [(ngModel)]="user.email"></div>
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder={{user.phone}}  value="" [(ngModel)]="user.phone"></div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8"><label class="labels">Password</label><input type="password" class="form-control" placeholder={{user.password}} readonly [(ngModel)]="user.password" ></div>
+                                <div class="col-md-2"><label class="labels">&nbsp;</label><input type="button" value="change" class="form-control btn btn-primary" (click)="change()"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12"><hr></div>
+                        <div class="col-md-12 mt-1"><label class="labels">Address</label></div>
+                        <div class="col-md-12 mt-1">
+                            <div class="row">
+                                <div class="col-md-4"><label class="labels">House no</label><input type="text" class="form-control" placeholder={{user.address.houseno}}  required [(ngModel)]="address.houseno"></div>
+                                <div class="col-md-4"><label class="labels">Street</label><input type="text" class="form-control" placeholder={{user.address.streetName}}  value="" required [(ngModel)]="address.streetName"></div>
+                                <div class="col-md-4"><label class="labels">City</label><input type="text" class="form-control" placeholder={{user.address.city}}  value="" required  [(ngModel)]="address.city"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4"><label class="labels">Pincode</label><input type="text" class="form-control" placeholder={{user.address.pincode}} value="" required  [(ngModel)]="address.pincode"></div>
+                                <div class="col-md-4"><label class="labels">State</label><input type="text" class="form-control" placeholder={{user.address.state}} value="" required [(ngModel)]="address.state"></div>
+                                <div class="col-md-4"><label class="labels">Country</label><input type="text" class="form-control" placeholder={{user.address.country}}  required [(ngModel)]="address.country"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row mt-3">
+                        <div class="col-md-12"><hr></div>
+                        <div class="col-md-12"><label class="labels"> Registered Equipment</label>
+                            <textarea id="w3review" name="w3review" rows="4" cols="105">
+                                At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+                                </textarea>
+                        </div>
+                    </div> -->
+
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" (click)="updateProfile()">update Profile</button></div>
+                </div>
+             
+            </div>
+       
+        </div>
+    </div>
+</div>
+   
+
